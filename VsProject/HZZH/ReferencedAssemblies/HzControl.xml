@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HzControl</name>
+    </assembly>
+    <members>
+        <member name="T:HzControl.Communal.Control.VistaFolderBrowserDialog">
+            <summary>
+            Vista 样式的选择文件对话框的基类
+            </summary>
+        </member>
+        <member name="P:HzControl.Communal.Control.VistaFolderBrowserDialog.SelectedPath">
+            <summary>
+            获取在 FolderBrowser 中选择的文件夹路径
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Control.VistaFolderBrowserDialog.#ctor">
+            <summary>
+            初始化 FolderBrowser 的新实例
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Control.VistaFolderBrowserDialog.Reset">
+            <summary>
+            将通用对话框的属性重置为默认值
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Control.VistaFolderBrowserDialog.RunDialog(System.IntPtr)">
+            <summary>
+            向用户显示 FolderBrowser 的对话框
+            </summary>
+            <param name="owner">任何实现 System.Windows.Forms.IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
+            <returns></returns>
+        </member>
+        <member name="T:HzControl.Communal.Tools.MMTimer">
+            <summary>
+            高精度定时器
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.timeSetEvent(System.UInt32,System.UInt32,HzControl.Communal.Tools.MMTimer.TimerCallback,System.UIntPtr,System.UInt32)">
+            <summary>
+            设置一个定时器回调事件
+            </summary>
+            <param name="uDelay"></param>
+            <param name="uResolution"></param>
+            <param name="lpTimeProc"></param>
+            <param name="dwUser"></param>
+            <param name="fuEvent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.timeKillEvent(System.UInt32)">
+            <summary>
+            毁掉指定的定时器回调事件
+            </summary>
+            <param name="uTimerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.timeGetTime">
+            <summary>
+            检取从WINDOWS开始已逝去的毫秒数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.timeBeginPeriod(System.UInt32)">
+            <summary>
+            设置应用程序或驱动程序使用的最小定时器分辨率
+            </summary>
+            <param name="uPeriod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.timeEndPeriod(System.UInt32)">
+            <summary>
+            清除应用程序或驱动程序使用的最小定时器分辨率
+            </summary>
+            <param name="uPeriod"></param>
+            <returns></returns>
+        </member>
+        <member name="F:HzControl.Communal.Tools.MMTimer.id">
+            <summary>
+            The current timer instance ID
+            </summary>
+        </member>
+        <member name="F:HzControl.Communal.Tools.MMTimer.thisCB">
+            <summary>
+            The callback used by the the API
+            </summary>
+        </member>
+        <member name="E:HzControl.Communal.Tools.MMTimer.Timer">
+            <summary>
+            The timer elapsed event 
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.Stop">
+            <summary>
+            Stop the current timer instance (if any)
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Tools.MMTimer.Start(System.UInt32,System.Boolean)">
+            <summary>
+            Start a timer instance
+            </summary>
+            <param name="ms">Timer interval in milliseconds</param>
+            <param name="repeat">If true sets a repetitive event, otherwise sets a one-shot</param>
+        </member>
+        <member name="T:HzControl.Communal.Tools.Serialization">
+            <summary>
+            序列化
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.LoadFromXml``1(System.String,System.Boolean)">
+            <summary>
+            从文件加载对象(反序列化XML格式为该类类型)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="file"></param>
+            <param name="createNew"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.LoadFromXml(System.Type,System.String,System.Boolean)">
+            <summary>
+            从文件加载对象(反序列化XML格式为该类类型)
+            </summary>
+            <param name="type"></param>
+            <param name="file"></param>
+            <param name="createNew"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.SaveToXml(System.Object,System.String,System.Boolean)">
+            <summary>
+            将对象保存到文件(序列化为XML格式)
+            </summary>
+            <param name="obj"></param>
+            <param name="file"></param>
+            <param name="useTemp"></param>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.LoadFromFile(System.String)">
+            <summary>
+            二进制序列化读取
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.LoadFromFile``1(System.String,System.Boolean)">
+            <summary>
+            二进制序列化读取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="file"></param>
+            <param name="createNew"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.SaveToFile(System.Object,System.String,System.Boolean)">
+            <summary>
+            二进制序列化保存  
+            </summary>
+            <param name="obj"></param>
+            <param name="file"></param>
+            <param name="useTemp"></param>
+        </member>
+        <member name="M:HzControl.Communal.Tools.Serialization.CloneObj(System.Object)">
+            <summary>
+            使用序列化拷贝对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HzControl.Communal.Tools.ThreadSleep">
+            <summary>
+            高精度让线程休眠一段时间
+            </summary>
+        </member>
+        <member name="M:HzControl.Communal.Tools.ThreadSleep.Sleep(System.Int32)">
+            <summary>
+            休眠几毫秒时间
+            </summary>
+            <param name="millisecondsTimeout"></param>
+        </member>
+        <member name="M:HzControl.Communal.Tools.ThreadSleep.Sleep(System.Int32@,System.Int32)">
+            <summary>
+            采用计数的方式暂缓线程的扫描,数字越小，调用越频繁
+            </summary>
+            <param name="tick"></param>
+            <param name="counter"></param>
+        </member>
+        <member name="T:HzControl.Logic.IReadWrite">
+            <summary>
+            在LogicTask中有定义继承接口的属性，能管理自己的数据存储
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.Frm_LogicTest.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.Frm_LogicTest.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:HzControl.Logic.Frm_LogicTest.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.FSMDef">
+            <summary>
+            状态机切换
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.FSMDef.Item(HzControl.Logic.FSMStaDef)">
+            <summary>
+            根据标识符表示的状态
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HzControl.Logic.FSMDef.Status">
+            <summary>
+            当前的状态
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.FSMDef.Change(System.String)">
+            <summary>
+            根据名字切换状态
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:HzControl.Logic.FSMDef.Change(HzControl.Logic.FSMStaDef)">
+            <summary>
+            根据标识符切换状态
+            </summary>
+            <param name="fSMStaDef"></param>
+        </member>
+        <member name="E:HzControl.Logic.FSMDef.ChangeState">
+            <summary>
+            状态切换触发
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.FSMChangeEventArgs">
+            <summary>
+            状态切换触发事件
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.FSMChangeEventArgs.State">
+            <summary>
+            切换后的状态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.State">
+            <summary>
+            状态机的基类，方便扩展
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.State.ID">
+            <summary>
+            状态的标识符
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.State.CanChangeFrom(HzControl.Logic.State)">
+            <summary>
+            可以从那种状态切换成当前状态
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HzControl.Logic.State.Time">
+            <summary>
+            当前状态持续的时间
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.FSMStaDef">
+            <summary>
+            状态机状态
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.INIT">
+            <summary>
+            初始态
+            </summary>      
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.STOP">
+            <summary>       
+            停止态          
+            </summary>      
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.RUN">
+            <summary>       
+            运行态          
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.RESET">
+            <summary>    
+            复位态       
+            </summary>   
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.SCRAM">
+            <summary>
+            急停态
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.PAUSE">
+            <summary>
+            暂停态
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.ALARM">
+            <summary>
+            警告状态，不需要复位
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.FSMStaDef.ERROR">
+            <summary>
+            错误停止，需要复位
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateInit">
+            <summary>
+            初始态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateStop">
+            <summary>
+            停止态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateRun">
+            <summary>
+            运行态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateReset">
+            <summary>
+            复位态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateScram">
+            <summary>
+            急停态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StatePause">
+            <summary>
+            暂停态
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateAlarm">
+            <summary>
+            警告状态，不需要复位
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.StateError">
+            <summary>
+            错误停止，需要复位
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.LogicLoop">
+            <summary>
+            一直循环运行的任务,可用于一些同步扫描触发等
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.LogicTask">
+            <summary>
+            可以控制启动停止的任务基类
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.LogicTask.Name">
+            <summary>
+            任务名字
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.LogicTask.Manager">
+            <summary>
+            所属于的任务管理
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.LogicTask.LoopTask">
+            <summary>
+            是否为循环任务
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.LogicTask.LG">
+            <summary>
+            任务流程计步数，包含一些对单步的简单时间计时
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.LogicTask.Time">
+            <summary>
+            从启动到完成耗时
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Start">
+            <summary>
+            运行任务
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Stop">
+            <summary>
+            停止任务
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Reset">
+            <summary>
+            任务中数据重置
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.GetSta">
+            <summary>
+            任务当前的状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Run">
+            <summary>
+            任务执行的方法，在内部的任务调度中一直循环执行
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.LogicImpl">
+            <summary>
+            需要实现的任务方法，注意不能使用阻塞的方式来写任务方法
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Save(System.String)">
+            <summary>
+            保存当前任务参数数据
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:HzControl.Logic.LogicTask.Load(System.String)">
+            <summary>
+            载入当前任务参数数据
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="E:HzControl.Logic.LogicTask.Completed">
+            <summary>
+            表示完成事件
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.ScanfTime">
+            <summary>
+            计平均扫描时间
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.ScanfTime.Caption">
+            <summary>
+            容量
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.ScanfTime.ExcludeZeroTime">
+            <summary>
+            是否排除0选项
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.ScanfTime.ScanfAverageTime">
+            <summary>
+            平均扫描时间
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.ScanfTime.MaxScanfTime">
+            <summary>
+            最大扫描时间
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.ScanfTime.Add(System.Double)">
+            <summary>
+            计入一个时间
+            </summary>
+            <param name="time"></param>
+        </member>
+        <member name="M:HzControl.Logic.ScanfTime.Clear">
+            <summary>
+            清除
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskControl.FSM">
+            <summary>
+            调度管理器中的状态机
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskControl.ScanfTime">
+            <summary>
+            平均扫描时间
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.RunLogic">
+            <summary>
+            最外面的while循环体，循环跑当前列表任务
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.Add(HzControl.Logic.LogicTask)">
+            <summary>
+            添加一个可控的任务
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.Remove(HzControl.Logic.LogicTask)">
+            <summary>
+            移除一个可控任务
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.Assemble(HzControl.Logic.LogicTask)">
+            <summary>
+            装载任务的子任务
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.Disassemble(HzControl.Logic.LogicTask)">
+            <summary>
+            卸载任务的子任务
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.FindTask(System.String)">
+            <summary>
+            按照名字查找任务
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.SaveLogicPara(System.String)">
+            <summary>
+            保存各个逻辑的数据参数
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.LoadLogicPara(System.String)">
+            <summary>
+            载入各个逻辑的数据参数
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskControl.Dispose">
+            <summary>
+            释放掉管理器移除其中的各个任务
+            </summary>
+        </member>
+        <member name="T:HzControl.Logic.TaskCounter">
+            <summary>
+            任务计步
+            </summary>
+        </member>
+        <member name="E:HzControl.Logic.TaskCounter.Completed">
+            <summary>
+            表示完成事件，给到外部方便调用
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskCounter.Execute">
+            <summary>
+            是否正在执行
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskCounter.Step">
+            <summary>
+            当前步
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskCounter.Done">
+            <summary>
+            完成否
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.Stop">
+            <summary>
+            停止,并且不会进入执行函数中的扫描
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.End">
+            <summary>
+            完成
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.StepNext(System.Int32,HzControl.Logic.FSMStaDef)">
+            <summary>
+            到下一步
+            </summary>
+            <param name="stepVal"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.ImmediateStepNext(System.Int32)">
+            <summary>
+            不做任何判断，直接到下一步
+            </summary>
+            <param name="stetpVal"></param>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.StepNext(System.Int32,System.Int32,HzControl.Logic.FSMStaDef)">
+            <summary>
+            延时一段时间后进入下一步
+            </summary>
+            <param name="stepVal"></param>
+            <param name="delay"></param>
+            <param name="fsmStaDef"></param>
+        </member>
+        <member name="F:HzControl.Logic.TaskCounter.stepDelayTime">
+            <summary>
+            用在延后计时，标识多久后进入下一步
+            </summary>
+        </member>
+        <member name="F:HzControl.Logic.TaskCounter.stepNextTime">
+            <summary>
+            用于步骤跳转后，到下一步逻辑前的延时判断
+            </summary>
+        </member>
+        <member name="M:HzControl.Logic.TaskCounter.Delay(System.Int32,System.Boolean)">
+            <summary>
+            在步跳转后，根据使能返回延时的状态
+            </summary>
+            <param name="time"></param>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HzControl.Logic.TaskManager">
+            <summary>
+            任务管理
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskManager.Default">
+            <summary>
+            默认的任务调度
+            </summary>
+        </member>
+        <member name="P:HzControl.Logic.TaskManager.List">
+            <summary>
+            任务调度列表
+            </summary>
+        </member>
+    </members>
+</doc>

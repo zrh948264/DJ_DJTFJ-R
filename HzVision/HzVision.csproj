@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{078181C4-43B7-4D6F-81F0-189D620342DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HzVision</RootNamespace>
+    <AssemblyName>HzVision</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GxIAPINET, Version=1.0.7166.29178, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\GxIAPINET.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferencedAssemblies\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net">
+      <HintPath>C:\Program Files (x86)\MVS\Development\Dlls\win32\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Device\CameraCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Device\CameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Device\CameraForm.Designer.cs">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Device\CameraMgr.cs" />
+    <Compile Include="Device\Driver\CameraDriver_DaHeng.cs" />
+    <Compile Include="Device\MainCamera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointLocation.cs" />
+    <Compile Include="VisionLogic.cs" />
+    <Compile Include="VisionProject.cs" />
+    <Compile Include="Device\CameraDevice.cs" />
+    <Compile Include="Device\Define\Camera.cs" />
+    <Compile Include="Device\Define\Config.cs" />
+    <Compile Include="Device\Define\ConfigAPIHandle.cs" />
+    <Compile Include="Device\Define\ConfigCamera.cs" />
+    <Compile Include="Device\Define\ConfigManager.cs" />
+    <Compile Include="Device\Define\CtrllerObj.cs" />
+    <Compile Include="Device\Define\Device.cs" />
+    <Compile Include="Device\Define\DeviceManager.cs" />
+    <Compile Include="Device\Define\Device_Camera.cs" />
+    <Compile Include="Device\Driver\APIHandle.cs" />
+    <Compile Include="Device\Driver\CameraDriver_Halcon.cs" />
+    <Compile Include="Device\Driver\CameraDriver_HikVision.cs" />
+    <Compile Include="Device\Driver\CameraDriver_MindVision.cs" />
+    <Compile Include="Device\Driver\Driver.cs" />
+    <Compile Include="Device\Driver\MVSDK.cs" />
+    <Compile Include="Device\IGrabHImage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\CalibrationAssistant\CalibDataPoint.cs" />
+    <Compile Include="Tool\CalibrationAssistant\CalibPointToPoint.cs" />
+    <Compile Include="Tool\CalibrationAssistant\CalibPPControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\CalibrationAssistant\CalibPPControl.designer.cs">
+      <DependentUpon>CalibPPControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\CalibrationAssistant\CalibPPSetting.cs" />
+    <Compile Include="Tool\CalibrationAssistant\CalibSimilarity.cs" />
+    <Compile Include="Device\IPlatformMove.cs" />
+    <Compile Include="Tool\Frm_HandMagnification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\Frm_HandMagnification.designer.cs">
+      <DependentUpon>Frm_HandMagnification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\Frm_MaskEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\Frm_MaskEditor.designer.cs">
+      <DependentUpon>Frm_MaskEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\IniFileOperate.cs" />
+    <Compile Include="Tool\InteractiveROI\GraphicContext.cs" />
+    <Compile Include="Tool\InteractiveROI\HObjectEntry.cs" />
+    <Compile Include="Tool\InteractiveROI\HWndCtrller.cs" />
+    <Compile Include="Tool\InteractiveROI\HWndCtrllerEx.cs" />
+    <Compile Include="Tool\InteractiveROI\ROI.cs" />
+    <Compile Include="Tool\InteractiveROI\ROIAnnulus.cs" />
+    <Compile Include="Tool\InteractiveROI\ROICircle.cs" />
+    <Compile Include="Tool\InteractiveROI\ROICircularArc.cs" />
+    <Compile Include="Tool\InteractiveROI\ROICross.cs" />
+    <Compile Include="Tool\InteractiveROI\ROICtrller.cs" />
+    <Compile Include="Tool\InteractiveROI\ROILine.cs" />
+    <Compile Include="Tool\InteractiveROI\ROIPolygon.cs" />
+    <Compile Include="Tool\InteractiveROI\ROIRectangle1.cs" />
+    <Compile Include="Tool\InteractiveROI\ROIRectangle2.cs" />
+    <Compile Include="Tool\InteractiveROI\ROIRectangle2_Fix.cs" />
+    <Compile Include="Tool\Miscs.cs" />
+    <Compile Include="Tool\Model-NCC\Frm_NccModelControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\Model-NCC\Frm_NccModelControl.designer.cs">
+      <DependentUpon>Frm_NccModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\Model-NCC\NCCModel.cs" />
+    <Compile Include="Tool\Model-NCC\NCCParam.cs" />
+    <Compile Include="Tool\Model-Shape\Frm_ShapeModelControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool\Model-Shape\Frm_ShapeModelControl.designer.cs">
+      <DependentUpon>Frm_ShapeModelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\Model-Shape\ShapeModel.cs" />
+    <Compile Include="Tool\Model-Shape\ShapeParam.cs" />
+    <Compile Include="Tool\ParallelLines.cs" />
+    <Compile Include="Tool\PictureZoom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tool\RotateCenter\NozzleRotateCenter.cs" />
+    <Compile Include="Tool\Serialization.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Communal\" />
+    <Folder Include="Tool\MatchAssistant\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Device\CameraForm.resx">
+      <DependentUpon>CameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Device\MainCamera.resx">
+      <DependentUpon>MainCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\CalibrationAssistant\CalibPPControl.resx">
+      <DependentUpon>CalibPPControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\Frm_HandMagnification.resx">
+      <DependentUpon>Frm_HandMagnification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\Frm_MaskEditor.resx">
+      <DependentUpon>Frm_MaskEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\Model-NCC\Frm_NccModelControl.resx">
+      <DependentUpon>Frm_NccModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool\Model-Shape\Frm_ShapeModelControl.resx">
+      <DependentUpon>Frm_ShapeModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

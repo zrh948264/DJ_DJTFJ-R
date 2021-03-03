@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBD7A63B-ABA1-4F6D-B95C-17FFC9C244A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HzControl</RootNamespace>
+    <AssemblyName>HzControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\HzControl.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communal\Controls\BorderPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Communal\Controls\FigureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communal\Controls\FigureForm.designer.cs">
+      <DependentUpon>FigureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communal\Controls\MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Communal\Controls\UserBingData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Communal\Controls\VistaFolderBrowserDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Communal\Tools\MemoryShare.cs" />
+    <Compile Include="Logic\IReadWrite.cs" />
+    <Compile Include="Communal\Tools\MMTimer.cs" />
+    <Compile Include="Communal\Tools\Serialization.cs" />
+    <Compile Include="Communal\Tools\ThreadSleep.cs" />
+    <Compile Include="Logic\Frm_LogicTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logic\Frm_LogicTest.designer.cs">
+      <DependentUpon>Frm_LogicTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\FSMDef.cs" />
+    <Compile Include="Logic\FSMStaDef.cs" />
+    <Compile Include="Logic\LogicLoop.cs" />
+    <Compile Include="Logic\LogicTask.cs" />
+    <Compile Include="Logic\ScanfTime.cs" />
+    <Compile Include="Logic\TaskControl.cs" />
+    <Compile Include="Logic\TaskCounter.cs" />
+    <Compile Include="Logic\TaskManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Communal\Controls\FigureForm.resx">
+      <DependentUpon>FigureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logic\Frm_LogicTest.resx">
+      <DependentUpon>Frm_LogicTest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Communal\Internal\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
